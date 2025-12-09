@@ -1,0 +1,123 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Linq;
+using System.Numerics;
+using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading;
+
+namespace journey1
+{
+    class CalculatorTask4
+    {
+        public static void Main(string[] args )
+        {
+           
+
+            Console.WriteLine("Press any following key to perform an arithmetic operation:");
+            Console.WriteLine("1 - Addition");
+            Console.WriteLine("2 - Subtractionn");
+            Console.WriteLine("3 - Multipliation");
+            Console.WriteLine("4 - Division");
+
+       
+            while (true)
+            {
+                Console.WriteLine("ENTER A KEY OPERATOR:  ");
+                int keyOperator = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write("Enter Number 1: ");
+                double Num1 = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("Enter Number 2: ");
+                double Num2 = Convert.ToDouble(Console.ReadLine());
+
+
+                CalculatorTask4 calculator = new();
+
+                double Result;
+
+                switch (keyOperator) 
+                   
+                {
+                        case 1:
+                        Result = calculator.Addition(Num1, Num2);
+                        Console.WriteLine($"{Num1} + {Num2} = {Result}" );
+                        break;
+                         case 2:
+                        Result = calculator.Subtraction(Num1, Num2);
+                        Console.WriteLine($"{Num1} - {Num2} = {Result}");
+                        break;
+                        case 3:
+
+                        Result = calculator.Multiplication(Num1, Num2);
+                        Console.WriteLine($"{Num1} * {Num2} = {Result}");
+                        break;
+                        case 4:
+                        Result = calculator.Division(Num1, Num2);
+                        Console.WriteLine($"{Num1} / {Num2} = {Result}");
+                        break;
+                        default:
+                        Console.WriteLine("NOT VALID");
+                        break;
+                }
+                Console.Write("Do you want to continue (Y/N)?");
+                string continuePlay = Console.ReadLine().ToUpper();
+               
+                if (continuePlay == "Y")
+                {
+                    continue;
+
+                }else
+                {
+                   
+                    break;
+                }
+             
+            }
+        
+
+        }
+
+       
+        public double Addition(double Num1, double Num2)
+        {
+
+            
+
+            return Num1 + Num2;
+                   
+                 
+
+        }
+        public double Subtraction(double Num1, double Num2)
+        {
+
+            return Num1 - Num2;
+                  
+          
+
+        }
+        public double Multiplication(double Num1, double Num2)
+        {
+
+
+            
+            return Num1 * Num2;
+                 
+            
+
+        }
+        public double Division(double Num1, double Num2)
+        {
+
+         
+            return Num1 / Num2;
+               
+
+        }
+
+    } 
+}
